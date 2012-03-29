@@ -30,7 +30,7 @@ def get_spec_files(instance):
     except AttributeError:
         return []
     else:
-        return [getattr(instance, n) for n in ik.spec_file_names]
+        return [if getattr(instance, n,False):getattr(instance, n) for n in ik.spec_file_names]
 
 
 def open_image(target):
